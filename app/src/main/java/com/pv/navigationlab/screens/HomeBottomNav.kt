@@ -8,26 +8,38 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 
 @Composable
-fun HomeBottomNav() {
+fun HomeBottomNav(
+    navController: NavController
+) {
     BottomNavigation(
         Modifier.background(Color.Green)
     ) {
         BottomNavigationItem(
             modifier = Modifier.background(Color.Black),
-            selected = true,
-            onClick = { },
-            icon = {},
-            selectedContentColor = Color.Green,
-            unselectedContentColor = Color.Gray
+            selected = false,
+            onClick = {
+                navController.navigate("black")
+            },
+            icon = {}
         )
         BottomNavigationItem(
+            modifier = Modifier.background(Color.Red),
             selected = false,
-            onClick = { },
-            icon = {},
-            selectedContentColor = Color.Red,
-            unselectedContentColor = Color.Blue
+            onClick = {
+                navController.navigate("red")
+            },
+            icon = {}
+        )
+        BottomNavigationItem(
+            modifier = Modifier.background(Color.Gray),
+            selected = false,
+            onClick = {
+                navController.navigate("choices")
+            },
+            icon = {}
         )
     }
 }
