@@ -1,5 +1,6 @@
 package com.pv.navigationlab.screens
 
+import android.util.Log
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Button
 import androidx.compose.material.Scaffold
@@ -14,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.pv.navigationlab.toggle
 import kotlinx.coroutines.launch
@@ -23,6 +25,12 @@ fun HomeScreen() {
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
     val navController = rememberNavController()
+
+    val backStackState = navController.currentBackStackEntryAsState()
+    val isNested: Boolean = !Routes.Home.contains(backStackState.value?.destination?.route)
+
+    Log.d("pv", "isNested $isNested")
+
 
     Scaffold(
         bottomBar = {
@@ -35,8 +43,13 @@ fun HomeScreen() {
                 Button(
                     modifier = Modifier.size(32.dp),
                     onClick = {
-                        scope.launch { scaffoldState.drawerState.toggle() }
-                    }) {
+                        if (isNested) {
+                            navController.popBackStack()
+                        } else {
+                            scope.launch { scaffoldState.drawerState.toggle() }
+                        }
+                    },
+                ) {
                 }
             }
         },

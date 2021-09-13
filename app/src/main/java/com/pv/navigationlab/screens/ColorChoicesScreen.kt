@@ -31,7 +31,7 @@ fun ColorChoicesScreen(navController: NavController) {
     ) {
         item {
             ColorChoicesItem(color = Color.Cyan) {
-                navController.navigate("cyan")
+                navController.navigate(Routes.Choices.CYAN)
             }
         }
         item {
@@ -39,7 +39,7 @@ fun ColorChoicesScreen(navController: NavController) {
         }
         item {
             ColorChoicesItem(color = Color.Yellow) {
-                navController.navigate("yellow")
+                navController.navigate(Routes.Choices.YELLOW)
             }
         }
         item {
@@ -47,7 +47,7 @@ fun ColorChoicesScreen(navController: NavController) {
         }
         item {
             ColorChoicesItem(color = Color.White) {
-                navController.navigate("white")
+                navController.navigate(Routes.Choices.WHITE)
             }
         }
     }

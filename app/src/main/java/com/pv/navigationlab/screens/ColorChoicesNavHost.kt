@@ -11,16 +11,16 @@ import androidx.navigation.navigation
 
 
 fun NavGraphBuilder.ColorChoicesNavHost(navController: NavController) {
-    composable("choicesHome") {
+    composable(Routes.Choices.HOME) {
         ColorChoicesScreen(navController)
     }
-    composable("cyan") {
+    composable(Routes.Choices.CYAN) {
         ColorScreen(color = Color.Cyan)
     }
-    composable("yellow") {
+    composable(Routes.Choices.YELLOW) {
         ColorScreen(color = Color.Yellow)
     }
-    composable("white") {
+    composable(Routes.Choices.WHITE) {
         ColorScreen(color = Color.White)
     }
 }
