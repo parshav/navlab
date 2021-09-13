@@ -18,9 +18,5 @@ object Routes {
         const val CYAN = "cyan"
         const val YELLOW = "yellow"
         const val WHITE = "white"
-
-        fun contains(route: String?): Boolean = route?.let { route ->
-            listOf(HOME, CYAN, YELLOW, WHITE).any { route == it }
-        } ?: false
     }
 }

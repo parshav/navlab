@@ -70,7 +70,7 @@ fun HomeScreen() {
         },
         scaffoldState = scaffoldState,
         drawerContent = {
-            Text(text = "This is part of the drawer")
+            HomeDrawerContent()
         }
     ) {
         HomeNavHost(navController = navController)
