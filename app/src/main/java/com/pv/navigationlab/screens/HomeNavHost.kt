@@ -6,9 +6,12 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navigation
 
 @Composable
 fun HomeNavHost(navController: NavHostController) {
+    // cant create remember for nested graphs
     NavHost(navController = navController, startDestination = "choices") {
         composable("black") {
             ColorScreen(color = Color.Black)
@@ -16,8 +19,8 @@ fun HomeNavHost(navController: NavHostController) {
         composable("red") {
             ColorScreen(color = Color.Red)
         }
-        composable("choices") {
-            ColorChoicesScreen()
+        navigation("choicesHome", "choices") {
+            ColorChoicesNavHost(navController)
         }
     }
 }

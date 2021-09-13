@@ -18,10 +18,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @Composable
-fun ColorChoicesScreen() {
-
+fun ColorChoicesScreen(navController: NavController) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -30,34 +30,25 @@ fun ColorChoicesScreen() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         item {
-            Box(
-                modifier = Modifier
-                    .height(50.dp)
-                    .width(100.dp)
-                    .background(Color.Cyan)
-            )
+            ColorChoicesItem(color = Color.Cyan) {
+                navController.navigate("cyan")
+            }
         }
         item {
             Spacer(modifier = Modifier.size(8.dp))
         }
         item {
-            Box(
-                modifier = Modifier
-                    .height(50.dp)
-                    .width(100.dp)
-                    .background(Color.Yellow)
-            )
+            ColorChoicesItem(color = Color.Yellow) {
+                navController.navigate("yellow")
+            }
         }
         item {
             Spacer(modifier = Modifier.size(8.dp))
         }
         item {
-            Box(
-                modifier = Modifier
-                    .height(50.dp)
-                    .width(100.dp)
-                    .background(Color.White)
-            )
+            ColorChoicesItem(color = Color.White) {
+                navController.navigate("white")
+            }
         }
     }
 }
