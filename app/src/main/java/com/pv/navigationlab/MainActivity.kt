@@ -3,23 +3,26 @@ package com.pv.navigationlab
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.pv.navigationlab.screens.HomeScreen
 import com.pv.navigationlab.ui.theme.NavigationLabTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            NavigationLabTheme {
+            HomeScreen()
+            /*NavigationLabTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
                     Greeting("Android")
                 }
-            }
+            }*/
         }
     }
 }
