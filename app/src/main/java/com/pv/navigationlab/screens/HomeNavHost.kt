@@ -24,20 +24,20 @@ fun HomeNavHost(navController: NavHostController) {
             ColorChoicesNav()
         }
         composable(Routes.Home.MAKER) {
-            ColorMakerScreen()
+            ColorMakerScreen(navController)
         }
         composable(
-            route = "custom?red={red}?blue={blue}?green={green}",
+            route = "custom?red={red}?green={green}?blue={blue}",
             arguments = listOf(
                 navArgument("red") { nullable = true },
-                navArgument("blue") { nullable = true },
-                navArgument("green") { nullable = true }
+                navArgument("green") { nullable = true },
+                navArgument("blue") { nullable = true }
             )
         ) {
             CustomColorScreen(
-                red = it.arguments?.getInt("red") ?: 0,
-                blue = it.arguments?.getInt("blue") ?: 0,
-                green = it.arguments?.getInt("green") ?: 0
+                red = it.arguments?.getString("red")?.toInt() ?: 0,
+                green = it.arguments?.getString("green")?.toInt() ?: 0,
+                blue = it.arguments?.getString("blue")?.toInt() ?: 0
             )
         }
     }

@@ -10,5 +10,5 @@ fun CustomColorScreen(
     blue: Int,
     green: Int
 ) {
-    ColorScreen(color = Color(red, blue, green))
+    ColorScreen(color = Color(red = red, green = green, blue = blue))
 }
