@@ -1,8 +1,10 @@
 package com.pv.navigationlab.screens
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Scaffold
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
