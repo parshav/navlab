@@ -21,7 +21,9 @@ fun HomeBottomNav(
             modifier = Modifier.background(Color.Black),
             selected = false,
             onClick = {
-                navController.navigate(Routes.Home.BLACK)
+                navController.navigate(Routes.Home.BLACK) {
+                    launchSingleTop = true
+                }
             },
             icon = {}
         )
@@ -29,7 +31,9 @@ fun HomeBottomNav(
             modifier = Modifier.background(Color.Red),
             selected = false,
             onClick = {
-                navController.navigate(Routes.Home.RED)
+                navController.navigate(Routes.Home.RED) {
+                    launchSingleTop = true
+                }
             },
             icon = {}
         )
@@ -37,7 +41,9 @@ fun HomeBottomNav(
             modifier = Modifier.background(Color.Gray),
             selected = false,
             onClick = {
-                navController.navigate(Routes.Home.CHOICES)
+                navController.navigate(Routes.Home.CHOICES) {
+                    launchSingleTop = true
+                }
             },
             icon = {}
         )
