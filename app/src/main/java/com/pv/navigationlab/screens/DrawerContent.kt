@@ -7,13 +7,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @Composable
-fun HomeDrawerContent() {
+fun DrawerContent(
+    navController: NavController,
+    onDrawerItemClick: () -> Unit
+) {
     LazyColumn {
         item {
             ColorChoicesItem(color = Color.Magenta) {
-
+                onDrawerItemClick()
+                navController.navigate(Routes.Drawer.MAGENTA)
             }
         }
         item {
@@ -21,7 +26,8 @@ fun HomeDrawerContent() {
         }
         item {
             ColorChoicesItem(color = Color.Green) {
-
+                onDrawerItemClick()
+                navController.navigate(Routes.Drawer.GREEN)
             }
         }
     }

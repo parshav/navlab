@@ -1,15 +1,12 @@
 package com.pv.navigationlab.screens
 
-import android.util.Log
 import androidx.compose.animation.core.animateFloat
-import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Button
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
@@ -18,15 +15,15 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.pv.navigationlab.toggle
 import kotlinx.coroutines.launch
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(parentNavController: NavController) {
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
     val navController = rememberNavController()
@@ -70,15 +67,11 @@ fun HomeScreen() {
         },
         scaffoldState = scaffoldState,
         drawerContent = {
-            HomeDrawerContent()
+            DrawerContent(parentNavController) {
+                scope.launch { scaffoldState.drawerState.toggle() }
+            }
         }
     ) {
-        HomeNavHost(navController = navController)
+        HomeNavHost(navController)
     }
-}
-
-@Composable
-@Preview
-private fun PreviewHomeScreen() {
-    HomeScreen()
 }

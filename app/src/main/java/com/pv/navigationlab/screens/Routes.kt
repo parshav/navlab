@@ -19,4 +19,9 @@ object Routes {
         const val YELLOW = "yellow"
         const val WHITE = "white"
     }
+
+    object Drawer {
+        const val MAGENTA = "magenta"
+        const val GREEN = "green"
+    }
 }
