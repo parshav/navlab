@@ -7,9 +7,11 @@ object Routes {
         const val BLACK = "black"
         const val RED = "red"
         const val CHOICES = "choices"
+        const val MAKER = "maker"
+        const val CUSTOM = "custom"
 
         fun contains(route: String?): Boolean = route?.let { route ->
-            listOf(BLACK, RED, CHOICES, Choices.HOME).any { route == it }
+            listOf(BLACK, RED, CHOICES, Choices.HOME, MAKER, CUSTOM).any { route == it }
         } ?: false
     }
 

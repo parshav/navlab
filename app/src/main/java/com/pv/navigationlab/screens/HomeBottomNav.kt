@@ -41,11 +41,13 @@ fun HomeBottomNav(
             },
             icon = {}
         )
+        BottomNavigationItem(
+            modifier = Modifier.background(Color(29, 233, 182)),
+            selected = false,
+            onClick = {
+                navController.navigate(Routes.Home.MAKER)
+            },
+            icon = {}
+        )
     }
-}
-
-@Preview
-@Composable
-private fun PreviewHomeBottomNav() {
-
 }
