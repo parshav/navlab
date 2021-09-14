@@ -19,8 +19,8 @@ fun HomeNavHost(navController: NavHostController) {
         composable(Routes.Home.RED) {
             ColorScreen(color = Color.Red)
         }
-        navigation(Routes.Choices.HOME, Routes.Home.CHOICES) {
-            ColorChoicesNavHost(navController)
+        composable(Routes.Home.CHOICES) {
+            ColorChoicesNav()
         }
     }
 }
