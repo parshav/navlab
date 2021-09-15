@@ -39,19 +39,19 @@ The [HomeScreen](./app/src/main/java/com/pv/navigationlab/screens/HomeScreen.kt)
 
 The [Color Choices screen](./app/src/main/java/com/pv/navigationlab/screens/ColorChoicesScreen.kt) presents a list of a few items that further navigate to a new ColorScreen.
 
-![](./screenshots/choices.mp4)
+![](./screenshots/choices.gif)
 
 #### Maker
 
 The [Color Maker screen](./app/src/main/java/com/pv/navigationlab/screens/ColorMakerScreen.kt) allows you to create a custom RGB value and pushes a [Custom Color Screen](./app/src/main/java/com/pv/navigationlab/screens/ColorChoicesScreen.kt) passing those values via arguments.
 
-![](./screenshots/colorMaker.mp4)
+![](./screenshots/colorMaker.gif)
 
 #### Drawer
 
 The [Drawer](./app/src/main/java/com/pv/navigationlab/screens/DrawerContent.kt) contains of a Pink and Green ColorScreen. Once clicked, these are presented via the navController from the Parent screen, and thus is able to present over the Home screen.
 
-![](./screenshots/drawer.mp4)
+![](./screenshots/drawer.gif)
 
 
 ## Structure
